@@ -1,0 +1,22 @@
+:root {
+  --body-background: #eee;
+  --card-background: #222;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+}
+
+.card-grid {
+}
+
+.card {
+}
+
+.card:hover {
+}
