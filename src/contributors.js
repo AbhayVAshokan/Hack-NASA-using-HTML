@@ -1,7 +1,17 @@
-/* =============================================
-    ADD YOUR GITHUB USERNAME TO THE BELOW ARRAY
-   ============================================= */
+/* ===============================================
+    ADD YOUR NAME AND USERNAME IN THE GIVEN FORMAT
 
-const contributors = [AbhayVAshokan];
+    export const <github-id> = {
+        name: <name>,
+        username: <github-id>
+    };
 
-export default contributors;
+    - Copy and paste the above snippet into a new
+      line and edit the name and username fields.
+    - Do not edit existing contributors.
+   =============================================== */
+
+export const AbhayVAshokan = {
+  name: "Abhay V Ashokan",
+  username: "AbhayVAshokan",
+};
