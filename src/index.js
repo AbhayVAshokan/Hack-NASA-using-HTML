@@ -11,9 +11,11 @@ const generateCard = ({ name, username }) => {
     .then((response) => response.json())
     .then(({ avatar_url, bio }) => {
       card.innerHTML = `
-        <h3>${name}</h3>
-        <img src=${avatar_url} alt=${name} />
-        <p>${bio}</p>
+        <a href="https://github.com/${username}">
+          <h3>${name}</h3>
+          <img src=${avatar_url} alt=${name} />
+          <p>${bio}</p>
+        </a>
       `;
 
       return card;
