@@ -50,3 +50,8 @@ export const sksk = {
   name: "Saurabh Gupta",
   username: "skgx",
 };
+
+export const niranjana = {
+    name: "Niranjana",
+    username: "niranjana687",
+};
