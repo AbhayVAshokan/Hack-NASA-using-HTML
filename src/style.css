@@ -19,6 +19,7 @@ body {
   padding: 2em;
   margin: auto;
   background-color: var(--body-background);
+  transition: background-color .3s;
 }
 
 h1 {
@@ -88,6 +89,72 @@ h1 {
   -webkit-transform: scale(1.02, 1.02);
   --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  box-shadow: var(--ring-offset-shadow, 0 0 #0000),
-    var(--ring-shadow, 0 0 #0000), var(--shadow);
+}
+
+.container{
+  position: fixed;
+  top:15px;
+  right:15px;
+}
+
+.light-mode-button {
+  background:0;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 20px;
+  width: 50px;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0);
+}
+
+.light-mode-button:focus {
+  outline:none; /* Not ideal for accessibility */
+}
+
+.light-mode-button span:nth-child(1) {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 50px;
+  height:23px;
+  border-radius: 20px;
+  background-color: #d6d7db;
+  box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+  transition: .3s;
+}
+
+.light-mode-button span:nth-child(2) {
+  position: absolute;
+  top:4px;
+  left:5px;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+  transition: .3s;
+}
+
+
+body[light-mode=dark] {
+  background-color: #333;
+  color: rgba(255,255,255,0.87);
+}
+
+body[light-mode="dark"] .light-mode-button span:nth-child(1){
+  background-color: #ced4e2;
+  color: #444;
+}
+
+body[light-mode="dark"] .card{
+  background-color: #555;
+}
+
+body[light-mode="dark"] .card > a > p {
+  color:rgb(245, 245, 245)
+}
+body[light-mode=dark] .light-mode-button span:nth-child(2) {
+  left: 30px;
+  background-color: #141516;
 }
