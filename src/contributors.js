@@ -23,7 +23,7 @@ export const harikrishnang3399 = {
 
 export const sarathsajan = {
   name: "Sarath Sajan",
-  username: "sarathsajan"
+  username: "sarathsajan",
 };
 
 export const joe733 = {
@@ -41,7 +41,7 @@ export const bmnidhin = {
   username: "bmnidhin"
 };
 
-export const sksk={
+export const sksk = {
   name: "Saurabh Gupta",
   username: "skgx"
 };
