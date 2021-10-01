@@ -6,12 +6,12 @@
 
 1. Edit the `src/contributors.js` file and add your details in the given format.
 
-```js
-export const <your-github-id> = {
-    name: <your-name>,
-    username: <your-github-id>
-};
-```
+    ```js
+    export const <your-github-id> = {
+        name: <your-name>,
+        username: <your-github-id>
+    };
+    ```
 
 2. Now make a pull request.
 3. There is no step 3.
