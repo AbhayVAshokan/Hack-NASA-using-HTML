@@ -57,6 +57,6 @@ export const niranjana = {
 };
 
 export const abilash = {
-    name: Abilash,
-    username: abilash-sajeev
+    name: "Abilash",
+    username: "abilash-sajeev"
 };
