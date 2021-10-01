@@ -1,6 +1,7 @@
 import * as contributors from "./contributors";
 import "./style.css";
 
+const body = document.getElementsByTagName("body")[0];
 const cardGrid = document.createElement("div");
 
 const generateCard = ({ name, username }) => {
@@ -27,4 +28,5 @@ Object.keys(contributors).forEach((key) => {
 });
 
 cardGrid.className = "card-grid";
-document.getElementsByTagName("body")[0].appendChild(cardGrid);
+body.setAttribute("light-mode", localStorage.lightMode || "light");
+body.appendChild(cardGrid);
