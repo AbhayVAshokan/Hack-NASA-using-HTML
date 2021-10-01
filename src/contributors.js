@@ -35,3 +35,8 @@ export const sreeram = {
   name: "Sreeram Venkitesh",
   username: "sreeram-venkitesh",
 };
+
+export const bmnidhin = {
+  name: "Nidhin BM",
+  username: "bmnidhin",
+};
