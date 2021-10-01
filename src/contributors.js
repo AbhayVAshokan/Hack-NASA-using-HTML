@@ -80,3 +80,8 @@ export const Anjali = {
   name: "Anjali",
   username: "AnjaliVAshokan"
 };
+
+export const armani = {
+  name: "Stephen",
+  username: "sorcerer-armani"
+};
