@@ -41,6 +41,11 @@ export const bmnidhin = {
   username: "bmnidhin"
 };
 
+export const adarsh = {
+  name: "Adarsh Ajit",
+  username: "adarshajit",
+};
+
 export const sksk = {
   name: "Saurabh Gupta",
   username: "skgx"
