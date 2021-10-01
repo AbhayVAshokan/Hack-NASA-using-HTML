@@ -37,7 +37,6 @@ h1 {
 .card {
   width: 100%;
   max-width: 250px;
-  padding: 2em 1.5em;
   transition: all 250ms ease-out;
   margin-right: 1em;
   margin-bottom: 1em;
@@ -54,6 +53,8 @@ h1 {
   color: inherit;
   text-decoration: inherit;
   text-transform: inherit;
+  display: inline-block;
+  padding: 2em 1.5em;
 }
 
 .card > a > h3 {
