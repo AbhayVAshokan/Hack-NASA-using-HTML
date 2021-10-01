@@ -10,6 +10,12 @@
       line and edit the name and username fields.
     - Do not edit existing contributors.
    =============================================== */
+export const SyedMustafaImam = {
+  name: "Syed Mustafa Imam",
+  username: "SyedMustafaImam"
+    };
+
+
 
 export const AbhayVAshokan = {
   name: "Abhay V Ashokan",
