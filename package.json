@@ -8,7 +8,6 @@
     "css-minimizer-webpack-plugin": "^3.0.2",
     "eslint": "^7.32.0",
     "html-webpack-plugin": "^5.3.2",
-    "husky": "^7.0.0",
     "mini-css-extract-plugin": "^2.3.0",
     "postcss": "^8.3.8",
     "postcss-loader": "^6.1.1",
@@ -24,7 +23,6 @@
     "start": "webpack serve",
     "build": "NODE_ENV=production webpack",
     "build-dev": "webpack",
-    "format": "prettier-eslint src/**/*.{html,js,json} --write",
-    "prepare": "husky install"
+    "format": "prettier-eslint src/**/*.{html,js,json,css} --write"
   }
 }

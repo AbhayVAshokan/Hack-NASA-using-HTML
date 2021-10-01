@@ -13,22 +13,22 @@
 
 export const AbhayVAshokan = {
   name: "Abhay V Ashokan",
-  username: "AbhayVAshokan",
+  username: "AbhayVAshokan"
 };
 
 export const harikrishnang3399 = {
   name: "Harikrishnan G",
-  username: "harikrishnang3399",
+  username: "harikrishnang3399"
 };
 
 export const sarathsajan = {
   name: "Sarath Sajan",
-  username: "sarathsajan",
+  username: "sarathsajan"
 };
 
 export const joe733 = {
   name: "Jovial Joe Jayarson",
-  username: "joe733",
+  username: "joe733"
 };
 
 export const sreeram = {
@@ -43,7 +43,7 @@ export const bmnidhin = {
 
 export const adarsh = {
   name: "Adarsh Ajit",
-  username: "adarshajit",
+  username: "adarshajit"
 };
 
 export const sksk = {
