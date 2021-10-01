@@ -9,12 +9,12 @@ const generateCard = ({ name, username }) => {
 
   return fetch(`https://api.github.com/users/${username}`)
     .then((response) => response.json())
-    .then(({ avatar_url, bio }) => {
+    .then(({ avatar_url, bio, public_repos, followers }) => {
       card.innerHTML = `
       <a href="https://github.com/${username}" rel="noopener noreferrer" target="_blank">
-        <h3>${name}</h3>
+        <h3>${name || "Hackerman"}</h3>
         <img src=${avatar_url} alt=${name} />
-        <p>${bio}</p>
+        <p>${bio || `Repos: ${public_repos} - Followers: ${followers}`}</p>
       </a>
       `;
 
