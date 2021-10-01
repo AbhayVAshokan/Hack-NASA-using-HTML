@@ -37,7 +37,6 @@ h1 {
 .card {
   width: 100%;
   max-width: 250px;
-  padding: 2em 1.5em;
   transition: all 250ms ease-out;
   margin-right: 1em;
   margin-bottom: 1em;
@@ -50,14 +49,23 @@ h1 {
     var(--ring-shadow, 0 0 #0000), var(--shadow);
 }
 
-.card > h3 {
+.card > a {
+  color: inherit;
+  text-decoration: inherit;
+  text-transform: inherit;
+  display: inline-block;
+  padding: 2em 1.5em;
+}
+
+.card > a > h3 {
+  font-size: 1em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   text-transform: uppercase;
 }
 
-.card > img {
+.card > a > img {
   width: 100%;
   margin: 1em 0;
   background-position: center;
@@ -65,7 +73,7 @@ h1 {
   background-repeat: no-repeat;
 }
 
-.card > p {
+.card > a > p {
   color: var(--text-color);
   font-size: 0.9em;
 }
