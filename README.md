@@ -30,4 +30,4 @@
 3. Navigate to project folder: `cd Hack-NASA-using-HTML`.
 4. Install dependencies: `yarn install`.
 5. Run project: `yarn start`.
-6. Your local server will be running at [`https://localhost:8080`](https://localhost:8080).
+6. Your local server will be running at [`http://localhost:8080`](http://localhost:8080).
