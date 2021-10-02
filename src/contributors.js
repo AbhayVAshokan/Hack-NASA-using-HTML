@@ -66,3 +66,8 @@ export const abilash = {
     name: "Abilash",
     username: "abilash-sajeev"
 };
+
+export const lokeshparmar998 = {
+    name: "Lokesh Parmar",
+    username: "lokeshparmar998"
+};
