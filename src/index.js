@@ -13,9 +13,10 @@ const generateCard = ({ name, username }) => {
     .then(({ avatar_url, bio, public_repos, followers }) => {
       card.innerHTML = `
       <a href="https://github.com/${username}" rel="noopener noreferrer" target="_blank">
-        <h3>${name || "Hackerman"}</h3>
+        <h3>${name || "Hacker"}</h3>
         <img src=${avatar_url} alt=${name} />
-        <p>${bio || `Repos: ${public_repos} - Followers: ${followers}`}</p>
+        <p>${`${bio || ""}`} </p> <br/>
+        <p>${`📦 ${public_repos} • 👥 ${followers}`}</p>
       </a>
       `;
 

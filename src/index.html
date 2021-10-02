@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hacking NASA</title>
-  </head>
-  <body>
-    <h1>Hackers on the way to hack NASA</h1>
-    <div class="container">
-      <button
-        class="light-mode-button"
-        aria-label="Toggle Light Mode"
-        onclick="toggle_light_mode()"
-      >
-        <span></span>
-        <span></span>
-      </button>
-    </div>
 
-    <script>
-      function toggle_light_mode() {
-        var app = document.getElementsByTagName("BODY")[0];
-        if (localStorage.lightMode == "dark") {
-          localStorage.lightMode = "light";
-          app.setAttribute("light-mode", "light");
-        } else {
-          localStorage.lightMode = "dark";
-          app.setAttribute("light-mode", "dark");
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Hacking NASA</title>
+</head>
+
+<body>
+  <p align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" width="20%" />
+  </p>
+  <h1>Hackers on the way to hack NASA</h1>
+  <h5>With HTML</h5>
+  <div class="container">
+    <button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <script>
+    function toggle_light_mode() {
+      var app = document.getElementsByTagName("BODY")[0];
+      if (localStorage.lightMode == "dark") {
+        localStorage.lightMode = "light";
+        app.setAttribute("light-mode", "light");
+      } else {
+        localStorage.lightMode = "dark";
+        app.setAttribute("light-mode", "dark");
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
