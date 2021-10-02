@@ -87,6 +87,6 @@ export const armani = {
 };
 
 export const lokeshparmar998 = {
-  name: "Stephen",
+  name: "Lokesh Parmar",
   username: "lokeshparmar998"
 };
