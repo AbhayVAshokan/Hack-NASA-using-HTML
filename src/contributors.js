@@ -95,3 +95,8 @@ export const SyedAtifAli = {
   name: "Syed Atif Ali",
   username: "SyedAtifAli"
 };
+
+export const navyabm02 = {
+  name: "Navya BM",
+  username: "navyabm02"
+};
