@@ -41,7 +41,7 @@ export const sreeram = {
   username: "sreeram-venkitesh"
 };
 
-export const dx-dy-dz = {
+export const dx_dy_dz = {
         name: "Divya Das",
         username: "dx-dy-dz"
 };
