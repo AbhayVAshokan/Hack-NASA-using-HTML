@@ -105,3 +105,8 @@ export const lemokami = {
     name: "Jesswin W Varghese",
     username: "lemokami"
 };
+
+export const aromalsanthosh = {
+        name: "Aromal S",
+        username: "aromalsanthosh"
+};
