@@ -120,6 +120,6 @@ export const AthulPS3D = {
     username: "AthulPS3D"
 };
 export const AdarshLenin = {
-    name: Adarsh Lenin,
+    name: "Adarsh Lenin",
     username: AdarshLenin
 };
