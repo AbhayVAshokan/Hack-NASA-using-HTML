@@ -119,3 +119,7 @@ export const AthulPS3D = {
     name: "Athul P",
     username: "AthulPS3D"
 };
+export const <AdarshLenin> = {
+    name: <Adarsh Lenin>,
+    username: <AdarshLenin>
+};
