@@ -121,5 +121,5 @@ export const AthulPS3D = {
 };
 export const AdarshLenin = {
     name: "Adarsh Lenin",
-    username: AdarshLenin
+    username: "AdarshLenin"
 };
