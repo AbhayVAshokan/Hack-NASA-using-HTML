@@ -149,3 +149,7 @@ export const sreehari666 = {
   name: "Sreehari vr",
   username: "sreehari666"
 };
+export const CHAITHANYA = {
+    name: "Chaithanya Babu",
+    username: "CHAITHANYA-BABU"
+};
