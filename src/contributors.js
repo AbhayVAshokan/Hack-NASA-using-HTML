@@ -163,3 +163,8 @@ export const DextersHub = {
   name: "Alwin John",
   username: "Dexters-Hub"
 };
+
+export const Thejus = {
+  name: "Thejus Paul",
+  username: "Thejus-Paul"
+};
