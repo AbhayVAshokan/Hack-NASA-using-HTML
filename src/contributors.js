@@ -168,6 +168,7 @@ export const DextersHub = {
 export const Thejus = {
   name: "Thejus Paul",
   username: "Thejus-Paul"
+};
 
 export const shaheedhudheen = {
     name: "Ahammed Shaheedhudheen",
