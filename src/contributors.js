@@ -175,3 +175,7 @@ export const shaheedhudheen = {
     username: "shaheedhudheen"
 };
 
+export const athul-cp = {
+    name: "Athul Cp",
+    username: "athul-cp"
+};
