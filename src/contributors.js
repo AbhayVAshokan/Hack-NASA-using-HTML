@@ -185,3 +185,7 @@ export const adilRafeek = {
   username: "adilrafeek"
 };
 
+export const bottercode = {
+  name: "Devansh Dwivedi",
+  username: "bottercode"
+};
