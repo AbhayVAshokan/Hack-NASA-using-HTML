@@ -60,7 +60,14 @@ Promise.all(
     .map(({ username }) =>
       fetch(`https://api.github.com/users/${username}`).then((response) =>
         response.json().then((contributor) => {
-          allContributors.push(contributor);
+          if (!contributor.message.includes("API rate limit exceeded")) {
+            allContributors.push(contributor);
+          } else if (!document.querySelector(".api-limit-error")) {
+            const error = document.createElement("div");
+            error.className = "api-limit-error";
+            error.textContent = "API limit exceeded. Try again later!";
+            body.appendChild(error);
+          }
         })
       )
     )

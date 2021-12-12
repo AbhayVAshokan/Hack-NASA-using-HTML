@@ -111,10 +111,19 @@ h5 {
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
+.api-limit-error {
+  color: rgba(255, 0, 0, 0.75);
+  font-size: 1.2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 5em;
+}
+
 .loading {
   height: 75px;
   width: 75px;
-  margin: 100px auto;
+  margin: 5em auto;
   border-radius: 50%;
   border-top: 4px solid #666;
   animation: spin 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
