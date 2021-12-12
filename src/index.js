@@ -43,7 +43,9 @@ const generateCardGrid = (contributors) => {
 
 const cachedContributors =
   JSON.parse(localStorage.getItem("contributors")) || [];
-const allContributors = cachedContributors;
+
+const allContributors =
+  localStorage.getItem("expiry") > Date.now() ? cachedContributors : [];
 
 const loading = document.createElement("div");
 loading.className = "loading";
@@ -60,8 +62,14 @@ Promise.all(
     .map(({ username }) =>
       fetch(`https://api.github.com/users/${username}`).then((response) =>
         response.json().then((contributor) => {
-          if (!contributor.message.includes("API rate limit exceeded")) {
+          if (!contributor?.message?.includes("API rate limit exceeded")) {
             allContributors.push(contributor);
+
+            const FOURTY_EIGHT_HOURS_IN_MS = 60 * 60 * 24 * 2;
+            localStorage.setItem(
+              "expiry",
+              Date.now() + FOURTY_EIGHT_HOURS_IN_MS
+            );
           } else if (!document.querySelector(".api-limit-error")) {
             const error = document.createElement("div");
             error.className = "api-limit-error";
