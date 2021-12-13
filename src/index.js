@@ -2,17 +2,21 @@ import * as contributors from "./contributors";
 import "./style.css";
 
 const body = document.getElementsByTagName("body")[0];
-const cardGrid = document.createElement("div");
+body.setAttribute("light-mode", localStorage.lightMode || "light");
 
-const generateCard = ({ name, username }) => {
+const generateCard = ({
+  avatar_url,
+  bio,
+  public_repos,
+  followers,
+  name,
+  login
+}) => {
   const card = document.createElement("div");
   card.className = "card";
 
-  return fetch(`https://api.github.com/users/${username}`)
-    .then((response) => response.json())
-    .then(({ avatar_url, bio, public_repos, followers }) => {
-      card.innerHTML = `
-      <a href="https://github.com/${username}" rel="noopener noreferrer" target="_blank">
+  card.innerHTML = `
+      <a href="https://github.com/${login}" rel="noopener noreferrer" target="_blank">
         <h3>${name || "Hacker"}</h3>
         <img src=${avatar_url} alt=${name} />
         <p>${`${bio || ""}`} </p> <br/>
@@ -20,14 +24,63 @@ const generateCard = ({ name, username }) => {
       </a>
       `;
 
-      return card;
-    });
+  return card;
 };
 
-Object.keys(contributors).forEach((key) => {
-  generateCard(contributors[key]).then((card) => cardGrid.appendChild(card));
-});
+const generateCardGrid = (contributors) => {
+  if (document.contains(document.querySelector(".card-grid")))
+    document.querySelector(".card-grid").remove();
 
-cardGrid.className = "card-grid";
-body.setAttribute("light-mode", localStorage.lightMode || "light");
-body.appendChild(cardGrid);
+  const cardGrid = document.createElement("div");
+  cardGrid.className = "card-grid";
+
+  contributors.forEach((contributor) =>
+    cardGrid.appendChild(generateCard(contributor))
+  );
+
+  body.appendChild(cardGrid);
+};
+
+const cachedContributors =
+  JSON.parse(localStorage.getItem("contributors")) || [];
+
+const allContributors =
+  localStorage.getItem("expiry") > Date.now() ? cachedContributors : [];
+
+const loading = document.createElement("div");
+loading.className = "loading";
+body.appendChild(loading);
+
+Promise.all(
+  Object.values(contributors)
+    .filter(
+      (contributor) =>
+        !cachedContributors.find(
+          (cached) => cached.login === contributor.username
+        )
+    )
+    .map(({ username }) =>
+      fetch(`https://api.github.com/users/${username}`).then((response) =>
+        response.json().then((contributor) => {
+          if (!contributor?.message?.includes("API rate limit exceeded")) {
+            allContributors.push(contributor);
+
+            const FOURTY_EIGHT_HOURS_IN_MS = 60 * 60 * 24 * 2;
+            localStorage.setItem(
+              "expiry",
+              Date.now() + FOURTY_EIGHT_HOURS_IN_MS
+            );
+          } else if (!document.querySelector(".api-limit-error")) {
+            const error = document.createElement("div");
+            error.className = "api-limit-error";
+            error.textContent = "API limit exceeded. Try again later!";
+            body.appendChild(error);
+          }
+        })
+      )
+    )
+).then(() => {
+  body.removeChild(loading);
+  localStorage.setItem("contributors", JSON.stringify(allContributors));
+  generateCardGrid(allContributors);
+});
