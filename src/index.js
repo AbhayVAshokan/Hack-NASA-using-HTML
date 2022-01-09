@@ -4,6 +4,8 @@ import "./style.css";
 const body = document.getElementsByTagName("body")[0];
 body.setAttribute("light-mode", localStorage.lightMode || "light");
 
+const searchBox = document.getElementById("searchBox");
+
 const generateCard = ({
   avatar_url,
   bio,
@@ -20,7 +22,7 @@ const generateCard = ({
         <h3>${name || "Hacker"}</h3>
         <img src=${avatar_url} alt=${name} />
         <p>${`${bio || ""}`} </p> <br/>
-        <p>${`📦 ${public_repos} • 👥 ${followers}`}</p>
+        <p>${`${public_repos} 📦 • ${followers} 👥`}</p>
       </a>
       `;
 
@@ -84,3 +86,11 @@ Promise.all(
   localStorage.setItem("contributors", JSON.stringify(allContributors));
   generateCardGrid(allContributors);
 });
+
+
+const searchHacker = (e) => {
+  const filteredContributors = allContributors.filter(contrib => contrib.name.toLowerCase().includes(e.target.value.toLowerCase()));
+  generateCardGrid(filteredContributors);
+};
+
+searchBox.addEventListener('input', searchHacker);
