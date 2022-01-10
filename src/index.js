@@ -89,8 +89,9 @@ Promise.all(
 
 const searchHacker = (e) => {
   const filteredContributors = allContributors.filter((contrib) => {
-    const name = contrib.name || contrib.login;
-    return name.toLowerCase().includes(e.target.value.toLowerCase());
+    const usr_name = contrib.login;
+    const name = contrib.name || "hacker";
+    return name.toLowerCase().includes(e.target.value.toLowerCase()) || usr_name.toLowerCase().includes(e.target.value.toLowerCase());
   });
   generateCardGrid(filteredContributors);
 };
