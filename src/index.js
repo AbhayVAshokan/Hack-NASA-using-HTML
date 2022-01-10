@@ -47,7 +47,9 @@ const cachedContributors =
   JSON.parse(localStorage.getItem("contributors")) || [];
 
 const allContributors =
-  localStorage.getItem("expiry") > Date.now() ? cachedContributors : [];
+  new Date(localStorage.getItem("expiry")) > new Date()
+    ? cachedContributors
+    : [];
 
 const loading = document.createElement("div");
 loading.className = "loading";
@@ -67,11 +69,9 @@ Promise.all(
           if (!contributor?.message?.includes("API rate limit exceeded")) {
             allContributors.push(contributor);
 
-            const FOURTY_EIGHT_HOURS_IN_MS = 60 * 60 * 24 * 2;
-            localStorage.setItem(
-              "expiry",
-              Date.now() + FOURTY_EIGHT_HOURS_IN_MS
-            );
+            const expiryDate = new Date();
+            expiryDate.setDate(expiryDate.getDate() + 2);
+            localStorage.setItem("expiry", expiryDate);
           } else if (!document.querySelector(".api-limit-error")) {
             const error = document.createElement("div");
             error.className = "api-limit-error";
@@ -87,10 +87,11 @@ Promise.all(
   generateCardGrid(allContributors);
 });
 
-
 const searchHacker = (e) => {
-  const filteredContributors = allContributors.filter(contrib => contrib.name.toLowerCase().includes(e.target.value.toLowerCase()));
+  const filteredContributors = allContributors.filter((contrib) =>
+    contrib.name.toLowerCase().includes(e.target.value.toLowerCase())
+  );
   generateCardGrid(filteredContributors);
 };
 
-searchBox.addEventListener('input', searchHacker);
+searchBox.addEventListener("input", searchHacker);
