@@ -88,9 +88,10 @@ Promise.all(
 });
 
 const searchHacker = (e) => {
-  const filteredContributors = allContributors.filter((contrib) =>
-    contrib.name.toLowerCase().includes(e.target.value.toLowerCase())
-  );
+  const filteredContributors = allContributors.filter((contrib) => {
+    const name = contrib.name || contrib.login;
+    return name.toLowerCase().includes(e.target.value.toLowerCase());
+  });
   generateCardGrid(filteredContributors);
 };
 
