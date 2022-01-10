@@ -49,6 +49,14 @@ h5 {
   margin-bottom: 3em;
 }
 
+input {
+  text-align: center;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
 .card-grid {
   display: flex;
   flex-wrap: wrap;
@@ -174,6 +182,29 @@ h5 {
   transition: 0.3s;
 }
 
+.search {
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  display: flex;
+  position: relative;
+  transform: translate(-50%, -50%);
+}
+
+.searchTerm {
+  width: 100%;
+  padding: 5px;
+  height: 36px;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.searchTerm:focus {
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid #105bd8;
+}
+
 body[light-mode="dark"] {
   background-color: #333;
   color: rgba(255, 255, 255, 0.87);
@@ -199,4 +230,9 @@ body[light-mode="dark"] .light-mode-button span:nth-child(2) {
 
 body[light-mode="dark"] .loading {
   border-color: #eee;
+}
+
+body[light-mode="dark"] .search > input {
+  color: #fff;
+  background-color: #444;
 }
