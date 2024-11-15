@@ -11,6 +11,11 @@
     - Do not edit existing contributors.
    =============================================== */
 
+export const CharlyHo = {
+  name: "Charly Hornaert",
+  username: "CharlyHo"
+};
+
 export const PSathyaNarayan = {
   name: "P Sathya Narayan",
   username: "psathyanarayan"
